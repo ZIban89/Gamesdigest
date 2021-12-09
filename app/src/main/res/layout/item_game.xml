@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+    android:layout_height="250dp">
+
+    <ImageView
+        android:id="@+id/image_gameBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/game_thumb_text"
+        app:layout_constraintBottom_toTopOf="@+id/gamesName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/metacriticsRatingContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@color/grey_transparent"
+        app:layout_constraintBottom_toTopOf="@id/usersRatingContainer"
+        app:layout_constraintEnd_toEndOf="@id/image_gameBackground"
+        app:layout_constraintTop_toTopOf="@id/image_gameBackground">
+
+        <TextView
+            android:id="@+id/metacriticsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/metacritic_rating_label"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/metacriticsRating"
+            app:layout_constraintEnd_toEndOf="@id/metacriticsRatingContainer"
+            app:layout_constraintTop_toTopOf="@id/metacriticsRatingContainer" />
+
+        <TextView
+            android:id="@+id/metacriticsRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="66"
+            app:layout_constraintBottom_toBottomOf="@+id/metacriticsRatingContainer"
+            app:layout_constraintEnd_toEndOf="@+id/metacriticsLabel"
+            app:layout_constraintStart_toStartOf="@+id/metacriticsLabel"
+            app:layout_constraintTop_toBottomOf="@+id/metacriticsLabel" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/usersRatingContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@color/grey_transparent"
+        app:layout_constraintBottom_toBottomOf="@id/image_gameBackground"
+        app:layout_constraintEnd_toEndOf="@id/image_gameBackground"
+        app:layout_constraintTop_toBottomOf="@id/metacriticsRatingContainer">
+
+        <TextView
+            android:id="@+id/playersLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/players_rating_label"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/playersRating"
+            app:layout_constraintEnd_toEndOf="@id/usersRatingContainer"
+            app:layout_constraintTop_toTopOf="@+id/usersRatingContainer" />
+
+        <TextView
+            android:id="@+id/playersRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="3.3"
+            android:textSize="16sp"
+
+            app:layout_constraintBottom_toBottomOf="@id/usersRatingContainer"
+            app:layout_constraintEnd_toEndOf="@+id/playersLabel"
+            app:layout_constraintStart_toStartOf="@+id/playersLabel"
+            app:layout_constraintTop_toBottomOf="@+id/playersLabel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/gamesName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/releaseDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_gameBackground" />
+
+    <TextView
+        android:id="@+id/releaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/image_gameBackground"
+        app:layout_constraintTop_toBottomOf="@+id/gamesName" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

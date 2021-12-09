@@ -1,0 +1,6 @@
+package com.example.gamesdigest.domain.model
+
+data class Tag(
+    val id: Int,
+    val name: String
+)

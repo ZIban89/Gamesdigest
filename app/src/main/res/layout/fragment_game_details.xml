@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_gameDetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.gamedetails.GameDetailsFragment">
+
+
+    <ImageView
+        android:id="@+id/image_gameBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/game_thumb_text"
+        app:layout_constraintBottom_toTopOf="@id/field_gameName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="invisible"
+
+        android:id="@+id/metacriticsRatingContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_transparent"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@id/usersRatingContainer"
+        app:layout_constraintEnd_toEndOf="@id/image_gameBackground"
+        app:layout_constraintTop_toTopOf="@id/image_gameBackground">
+
+        <TextView
+            android:id="@+id/metacriticsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/metacritic_rating_label"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/metacriticsRating"
+            app:layout_constraintEnd_toEndOf="@id/metacriticsRatingContainer"
+            app:layout_constraintTop_toTopOf="@id/metacriticsRatingContainer" />
+
+        <TextView
+            android:id="@+id/metacriticsRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/metacriticsRatingContainer"
+            app:layout_constraintEnd_toEndOf="@id/metacriticsLabel"
+            app:layout_constraintStart_toStartOf="@id/metacriticsLabel"
+            app:layout_constraintTop_toBottomOf="@id/metacriticsLabel" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="invisible"
+        android:id="@+id/usersRatingContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_transparent"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/image_gameBackground"
+        app:layout_constraintEnd_toEndOf="@id/image_gameBackground"
+        app:layout_constraintTop_toBottomOf="@id/metacriticsRatingContainer">
+
+        <TextView
+            android:id="@+id/playersLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/players_rating_label"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/playersRating"
+            app:layout_constraintEnd_toEndOf="@id/usersRatingContainer"
+            app:layout_constraintTop_toTopOf="@id/usersRatingContainer" />
+
+        <TextView
+            android:id="@+id/playersRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/usersRatingContainer"
+            app:layout_constraintEnd_toEndOf="@id/playersLabel"
+            app:layout_constraintStart_toStartOf="@id/playersLabel"
+            app:layout_constraintTop_toBottomOf="@id/playersLabel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/field_gameName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/field_releaseDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_gameBackground"
+
+        tools:text="Some game name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/field_releaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/chipGroup_genres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/field_gameName"
+        tools:text="1666-06-06" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup_genres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/flow_publishers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/field_releaseDate" />
+
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_publishers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:flow_wrapMode="chain"
+        app:layout_constraintBottom_toTopOf="@id/textView_website"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chipGroup_genres" />
+
+    <TextView
+        android:id="@+id/textView_website"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        app:layout_constraintBottom_toTopOf="@id/scrollView_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flow_publishers" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView_description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/button_findBestPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_website">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_description"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"/>
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_findBestPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView_description"
+        android:text="@string/see_editions_text"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

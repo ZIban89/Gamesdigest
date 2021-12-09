@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1027656577898",
+    "project_id": "final-task-2de2d",
+    "storage_bucket": "final-task-2de2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027656577898:android:cff0eaa1726225ca5d2b13",
+        "android_client_info": {
+          "package_name": "com.example.gamesdigest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027656577898-6uvvrf6jd9oad1bmnmu79dd56poetq4i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaFyXxOwrvMtSKajgkzxjgQPaBjqfMqeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027656577898-6uvvrf6jd9oad1bmnmu79dd56poetq4i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gamesFragment">
+    <fragment
+        android:id="@+id/gameDetailsFragment"
+        android:name="com.example.gamesdigest.presentation.gamedetails.GameDetailsFragment"
+        android:label="Game details"
+        tools:layout="@layout/fragment_game_details">
+        <argument
+            android:name="gameId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_gameDetailsFragment_to_gameEditionsFragment"
+            app:destination="@id/gameEditionsFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/gamesFragment"
+        android:name="com.example.gamesdigest.presentation.games.GamesFragment"
+        android:label="Games"
+        tools:layout="@layout/fragment_games">
+        <action
+            android:id="@+id/action_gamesFragment_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameEditionsFragment"
+        android:name="com.example.gamesdigest.presentation.gameeditions.GameEditionsFragment"
+        android:label="Game editions"
+        tools:layout="@layout/fragment_game_editions">
+        <action
+            android:id="@+id/action_gameEditionsFragment_to_dealsFragment"
+            app:destination="@id/dealsFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/dealsFragment"
+        android:name="com.example.gamesdigest.presentation.deals.DealsFragment"
+        android:label="Deals"
+        tools:layout="@layout/fragment_deals">
+        <action
+            android:id="@+id/action_dealsFragment_to_subscriptionDialogFragment"
+            app:destination="@id/subscriptionDialogFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+    </fragment>
+    <dialog
+        android:id="@+id/subscriptionDialogFragment"
+        android:name="com.example.gamesdigest.presentation.subscription.SubscriptionDialogFragment"
+        android:label="Subscribe"
+        tools:layout="@layout/fragment_subscription_dialog" />
+    <fragment
+        android:id="@+id/subscriptionsFragment"
+        android:name="com.example.gamesdigest.presentation.subscriptions.SubscriptionsFragment"
+        android:label="Your subscriptions"
+        tools:layout="@layout/fragment_subscriptions" />
+    <action
+        android:id="@+id/action_open_subscriptions_fragment"
+        app:destination="@id/subscriptionsFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/gamesFragment"
+        app:popUpToInclusive="false" />
+
+    <fragment
+        android:id="@+id/preferenceFragment"
+        android:name="com.example.gamesdigest.presentation.preference.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@xml/root_preferences"/>
+    <action
+        android:id="@+id/action_open_preference_fragment"
+        app:destination="@id/preferenceFragment"
+        app:launchSingleTop="true" />
+
+</navigation>

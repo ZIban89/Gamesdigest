@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Games Digest</string>
+    <string name="all_label">All</string>
+    <string name="loading_error_message">Loading error…</string>
+    <string name="loading_message">Loading…</string>
+    <string name="btn_apply_label">Apply</string>
+    <string name="open_filter_parameters_description">open filter parameters</string>
+    <string name="metacritic_rating_label">Metacritic rating</string>
+    <string name="year_label">Year</string>
+    <string name="genre_label">Genre</string>
+    <string name="players_rating_label">Players rating</string>
+    <string name="subscribe_button_label">Subscribe and get the best price!</string>
+    <string name="settings_label">Settings</string>
+    <string name="success_subscription_message">Congratulations! You will be notified when the game becomes cheaper</string>
+    <string name="subscriptions_header_text">We\'ll let you know when games get cheaper</string>
+    <string name="check_email_message">Go to the settings and check your email!</string>
+    <string name="your_subscriptions_text">Your subscriptions</string>
+    <string name="game_thumb_text">Game image</string>
+    <!-- Preference Titles -->
+    <string name="theme_pref_header">Preference</string>
+    <string name="email_pref_header">Email</string>
+    <string name="theme_switcher_key">theme_switcher</string>
+    <string name="email_pref_key">email_textView_key</string>
+    <string name="see_editions_text">See editions</string>
+    <string name="your_email_hint_text">Your email</string>
+    <string name="desired_price_hint_text">Desired price</string>
+    <string name="subscribe_btn_text">Subscribe</string>
+    <string name="tap_to_retry_text">Tap to Retry</string>
+    <string name="unsubscribe_button_description">Remove the game from your list button</string>
+
+
+</resources>
