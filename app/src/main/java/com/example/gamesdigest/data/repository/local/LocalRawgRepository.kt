@@ -5,7 +5,7 @@ import androidx.paging.PagingConfig
 import com.example.gamesdigest.data.remote.ITEMS_PER_PAGE
 import com.example.gamesdigest.data.remote.api.LocalApi
 import com.example.gamesdigest.data.remote.dto.rawg.RawgGameDto
-import com.example.gamesdigest.data.remote.dto.rawg.genres.Genre
+import com.example.gamesdigest.data.remote.dto.rawg.GenreDto
 import com.example.gamesdigest.domain.repository.RawgRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -26,7 +26,7 @@ class LocalRawgRepository @Inject constructor(
         )
     }
 
-    override suspend fun getGenres(): List<Genre> =
+    override suspend fun getGenres(): List<GenreDto> =
         withContext(Dispatchers.IO) { rawgApi.getGenresFromRawg().body()!! }
 
     override suspend fun getGameDetails(id: Int) =

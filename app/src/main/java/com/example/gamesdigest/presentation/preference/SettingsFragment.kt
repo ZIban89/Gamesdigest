@@ -13,7 +13,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         findPreference<SwitchPreferenceCompat>(
             getString(R.string.theme_switcher_key)
-        )?.setOnPreferenceChangeListener { preference, newValue ->
+        )?.setOnPreferenceChangeListener { _, newValue ->
             AppCompatDelegate.setDefaultNightMode(
                 if (newValue == true) AppCompatDelegate.MODE_NIGHT_YES
                 else AppCompatDelegate.MODE_NIGHT_NO

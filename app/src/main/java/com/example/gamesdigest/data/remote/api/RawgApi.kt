@@ -2,7 +2,7 @@ package com.example.gamesdigest.data.remote.api
 
 import com.example.gamesdigest.data.remote.dto.rawg.RawgGameDetailsDto
 import com.example.gamesdigest.data.remote.dto.rawg.RawgGamesApiData
-import com.example.gamesdigest.data.remote.dto.rawg.genres.Responce
+import com.example.gamesdigest.data.remote.dto.rawg.Responce
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

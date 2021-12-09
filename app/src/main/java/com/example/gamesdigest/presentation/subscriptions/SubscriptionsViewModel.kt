@@ -20,7 +20,7 @@ import javax.inject.Inject
 class SubscriptionsViewModel @Inject constructor(
     private val getSubscriptionsByEmailUsecase: GetSubscriptionsByEmailUsecase,
     private val deleteSubscriptionByDocIdUsecase: DeleteSubscriptionByDocIdUsecase,
-    private val coroutineScope: CoroutineScope? = null
+    coroutineScope: CoroutineScope? = null
 ) : ViewModel() {
 
     private val scope = getViewModelScope(coroutineScope)

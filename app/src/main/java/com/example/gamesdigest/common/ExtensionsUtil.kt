@@ -27,7 +27,8 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat
-import java.util.Locale
+import java.util.*
+import java.util.regex.Pattern
 
 suspend fun ImageView.loadImage(imageUrl: String) {
     try {
@@ -70,8 +71,18 @@ fun View.visible(isVisible: Boolean) {
     visibility = if (isVisible) View.VISIBLE else View.GONE
 }
 
-fun String.isValidEmail() =
-    android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
+fun String.isValidEmail(): Boolean {
+    val regex =
+        "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$"
+
+    val pattern: Pattern = Pattern.compile(regex)
+    return pattern.matcher(this).matches()
+
+    /**
+     * Tests failed with it
+     *android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()*/
+
+}
 
 fun Query.asFlow(): Flow<QuerySnapshot> {
     return callbackFlow {

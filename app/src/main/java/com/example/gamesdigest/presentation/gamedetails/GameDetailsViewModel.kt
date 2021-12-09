@@ -1,12 +1,13 @@
 package com.example.gamesdigest.presentation.gamedetails
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.gamesdigest.common.Resource
+import com.example.gamesdigest.common.getViewModelScope
 import com.example.gamesdigest.domain.model.GameDetails
 import com.example.gamesdigest.domain.model.UiState
 import com.example.gamesdigest.domain.usecase.RawgGameDetailsByIdUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
@@ -15,9 +16,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GameDetailsViewModel @Inject constructor(
-    private val rawgGameDetailsByIdUseCase: RawgGameDetailsByIdUseCase
+    private val rawgGameDetailsByIdUseCase: RawgGameDetailsByIdUseCase,
+    coroutineScope: CoroutineScope? = null
 ) : ViewModel() {
 
+    private val scope = getViewModelScope(coroutineScope)
     private val _gameDetailsState = MutableStateFlow(UiState<GameDetails>())
     val gameDetailsState: StateFlow<UiState<GameDetails>> = _gameDetailsState
 
@@ -34,6 +37,6 @@ class GameDetailsViewModel @Inject constructor(
                     _gameDetailsState.value = UiState(isLoading = true)
                 }
             }
-        }.launchIn(viewModelScope)
+        }.launchIn(scope)
     }
 }
